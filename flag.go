@@ -1199,7 +1199,7 @@ func Parse() {
 
 // Parse parses the command-line flags from os.Args[1:].  Must be called
 // after all flags are defined and before flags are accessed by the program.
-func Parse(arguments []string) {
+func ParseContent(arguments []string) {
 	CommandLine.Parse(arguments)
 }
 
