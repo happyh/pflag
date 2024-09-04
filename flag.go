@@ -1192,13 +1192,15 @@ func (f *FlagSet) Parsed() bool {
 
 // Parse parses the command-line flags from os.Args[1:].  Must be called
 // after all flags are defined and before flags are accessed by the program.
-func Parse(arguments []string) {
+func Parse() {
 	// Ignore errors; CommandLine is set for ExitOnError.
-	if len(arguments) == 0 {
-		CommandLine.Parse(os.Args[1:])
-	}else{
-		CommandLine.Parse(arguments)
-	}
+	CommandLine.Parse(os.Args[1:])
+}
+
+// Parse parses the command-line flags from os.Args[1:].  Must be called
+// after all flags are defined and before flags are accessed by the program.
+func Parse(arguments []string) {
+	CommandLine.Parse(arguments)
 }
 
 // ParseAll parses the command-line flags from os.Args[1:] and called fn for each.
